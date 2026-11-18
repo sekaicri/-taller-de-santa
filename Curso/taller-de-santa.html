@@ -1346,7 +1346,19 @@ var HOLD=[
   "Máquina: «Machine Industry #2» de numiteg, Sketchfab, CC BY 4.0.",
   "Los dos se convirtieron a FBX y la máquina fue recortada: dilo en tus créditos.",
   "Añade los nombres de los packs de la Asset Store que usaste (Día 3 y Día 8) y de cualquier modelo que hayas agregado tú."]];
- DAYS[9].steps.unshift(fbxNote,newToys,moreIdeas);
+ var recap=["Repaso rápido del curso","Antes de compilar, un recuerdo de lo que construimos en cada día. Solo se lee y se comenta: no hace falta abrir ninguna escena.",[
+  "Día 0 · Prepara tu taller: Unity 6, XR Interaction Toolkit y sus ejemplos instalados, y el proyecto ordenado en carpetas.",
+  "Día 1 · Grab: el XR Origin es el jugador (cabeza y manos). Un objeto con Grab Interactable se puede agarrar; sin visor se prueba con el XR Device Simulator.",
+  "Día 2 · Un regalo especial: hover (apuntar), select (agarrar) y activate (gatillo) son eventos. Con ellos el regalo brilla, suena y suelta chispas.",
+  "Día 3 · La mesa de empaque: una cinta lleva los juguetes, el gatillo los envuelve y el Socket de la caja los recibe. La fábrica saca juguetes y carbón al azar.",
+  "Día 4 · El pedido en el mundo: un Canvas en World Space con textos y botones que se pulsan con el rayo. La lista del pedido sale de un prefab y un script coordina el juego.",
+  "Día 5 · Muévete por el taller: teletransporte con Teleportation Area, giro por pasos y viñeta para no marearse.",
+  "Día 6 · Dale vida al empaque: sonido, partículas y vibración cuando algo sale bien o mal, y un pedido distinto en cada ronda.",
+  "Día 7 · El pedido y el reloj: tiempo, puntos, dificultad, racha, récord y estrellas. Aquí el taller se vuelve un juego.",
+  "Día 8 · Un taller acogedor: luz, niebla, nieve, decoración, música y los modelos del trineo y de la máquina.",
+  "Día 9 · Lleva tu proyecto al visor: la escena final, los ajustes de Android, OpenXR con los controles del Quest y la compilación del APK."],
+  "Idea para recordar: casi todo el curso es lo mismo, un objeto con un evento que dispara una reacción (sonido, luz, puntos o un cambio en la escena)."];
+ DAYS[9].steps.unshift(recap,fbxNote,newToys,moreIdeas);
  var quitSim=["Quita el XR Device Simulator","El simulador solo sirve en el computador. En el visor se queda con la cámara y los controles: verías los controles del simulador y la cámara pegada, sin moverse con tu cabeza.",[
   "Abre la escena Day08_Polish.",
   "En la Hierarchy selecciona XR Device Simulator (el objeto que pusiste en el Día 1 o 3).",
