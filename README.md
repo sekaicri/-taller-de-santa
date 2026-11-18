@@ -9,12 +9,6 @@ Curso de realidad virtual en Unity 6 (URP, XR Interaction Toolkit 3.6) para Meta
 
 Unity 6000.3.11f1.
 
-## Packs de la Asset Store
+## Packs de Navidad
 
-Por su licencia, estos packs no están en el repositorio. Descárgalos de la Asset Store e impórtalos como explica la guía (Día 3 y Día 8):
-
-- Free Christmas Presents / Low Poly
-- Stylized Christmas Environment (Polyart)
-- Low Poly Objects Pack (opcional)
-
-Sin los packs, las escenas se arman con cubos y formas simples.
+El proyecto incluye los packs de Navidad que usa el curso (Free Christmas Presents, Stylized Christmas Environment y Low Poly Objects Pack), solo para uso en este curso. Al abrirlo, las escenas se arman con los modelos reales.

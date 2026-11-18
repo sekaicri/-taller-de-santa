@@ -34,11 +34,4 @@ crashlytics-build.gradle
 /Clases/
 
 
-# Asset Store packs: not redistributable, download them from the Asset Store (see the guide, Day 3 and Day 8)
-/Assets/Polyart/
-/Assets/Polyart.meta
-/Assets/Christmas-Presents/
-/Assets/Christmas-Presents.meta
-/Assets/Low-Poly_Objects_Pack/
-/Assets/Low-Poly_Objects_Pack.meta
 /.utmp/
