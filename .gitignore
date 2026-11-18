@@ -1,0 +1,44 @@
+﻿# Unity
+/[Ll]ibrary/
+/[Tt]emp/
+/[Oo]bj/
+/[Bb]uild/
+/[Bb]uilds/
+/[Ll]ogs/
+/[Uu]ser[Ss]ettings/
+/[Mm]emoryCaptures/
+/[Rr]ecordings/
+*.csproj
+*.sln
+*.suo
+*.user
+*.userprefs
+*.pidb
+*.booproj
+*.svd
+*.pdb
+*.mdb
+*.opendb
+*.VC.db
+.vs/
+.vsconfig
+.idea/
+.vscode/
+*.apk
+*.aab
+*.unitypackage
+sysinfo.txt
+crashlytics-build.gradle
+
+# Material de clases (no es parte del proyecto Unity)
+/Clases/
+
+
+# Asset Store packs: not redistributable, download them from the Asset Store (see the guide, Day 3 and Day 8)
+/Assets/Polyart/
+/Assets/Polyart.meta
+/Assets/Christmas-Presents/
+/Assets/Christmas-Presents.meta
+/Assets/Low-Poly_Objects_Pack/
+/Assets/Low-Poly_Objects_Pack.meta
+/.utmp/
