@@ -509,7 +509,7 @@ var DAYS = [
    ["El identificador de la app","Cada app necesita un nombre único.",[
      "En Player > Android > Other Settings busca Package Name.","Escribe com.tallerdesanta.vrclass."]],
    ["Activa OpenXR","OpenXR conecta el juego con el visor.",[
-     "Edit > Project Settings > XR Plug-in Management.","Si pide instalar, pulsa Install XR Plug-in Management.","Abre la pestaña Android (el icono del robot) y marca OpenXR.","Con OpenXR marcado, haz clic en OpenXR (debajo de XR Plug-in Management, en la lista de la izquierda) y comprueba que estás en la pestaña Android (el robot).","En Features marca Meta Quest Support.","En Enabled Interaction Profiles pulsa + y agrega Oculus Touch Controller Profile. Es OBLIGATORIO: sin ese perfil los controles no responden en el visor.","Atajo: el menú VR Class > Day 09 > Configure Quest Build marca OpenXR, Meta Quest Support y el perfil Oculus Touch Controller por ti."],
+     "Edit > Project Settings > XR Plug-in Management.","Si pide instalar, pulsa Install XR Plug-in Management.","Abre la pestaña Android (el icono del robot) y marca OpenXR.","Con OpenXR marcado, haz clic en OpenXR (debajo de XR Plug-in Management, en la lista de la izquierda) y comprueba que estás en la pestaña Android (el robot).","En Features marca Meta Quest Support.","En Enabled Interaction Profiles pulsa + y agrega Oculus Touch Controller Profile. Es OBLIGATORIO: sin ese perfil los controles no responden en el visor."],
      "Si OpenXR no aparece, instala los paquetes com.unity.xr.management y com.unity.xr.openxr desde el Package Manager."],
    ["Prepara el Quest","El visor debe aceptar tu app.",[
      "En el móvil de Meta (app Meta Horizon) activa el Modo desarrollador del visor.","Conecta el Quest por USB y, dentro del visor, acepta Permitir depuración USB."]],
@@ -1295,8 +1295,7 @@ var HOLD=[
  replaceStep(9,"Pon las escenas",[["Pon la escena final","Solo la escena del juego final entra en la app.",[
   "En Build Profiles abre la lista Scene List.",
   "Añade solo Day08_Polish (Add Open Scenes con la escena abierta, o arrástrala).",
-  "Déjala marcada: será la única escena de tu juego."],
-  "El menú VR Class > Day 09 > Configure Quest Build la pone sola."]]);
+  "Déjala marcada: será la única escena de tu juego."]]]);
 
  var fbxNote=["Nota: el FBX y el material de la máquina","Mira aquí: los modelos del Día 8 y el material de la máquina. Si tu escena los tiene mal, esto lo arregla.",[
   {t:"Descargar santas_sleigh.fbx (el trineo)",href:B+"/dia-08/models/santas_sleigh.fbx",dl:true,note:"Assets/Day08/Models."},
@@ -1333,13 +1332,13 @@ var HOLD=[
   "En XR Plug-in Management, pestaña Android, OpenXR está marcado y tiene el perfil Oculus Touch Controller.",
   "Hay espacio libre en el disco: la primera compilación crea muchos archivos y tarda bastante.",
   "Guardaste la escena (Ctrl + S) y la Console no tiene errores rojos.",
-  "El XR Device Simulator está apagado (o usas el script del Día 9, que lo quita de la build)."]];
+  "El XR Device Simulator está apagado."]];
  var ifFails=["Si algo falla en el visor","Los fallos más comunes del último paso y cómo revisarlos.",[
   "El Quest no aparece en Run Device: cambia el cable por uno de datos, reinicia el visor, acepta de nuevo Permitir depuración USB y pulsa Refresh en Build Profiles.",
   "La compilación termina pero la app no se abre: revisa en la Console el primer error rojo (el de más arriba) y arréglalo antes de compilar otra vez.",
   "Ves todo negro dentro del visor: comprueba que OpenXR esté marcado en la pestaña Android (no en la de PC) y que la escena de la lista sea Day08_Polish.",
   "Los controles no responden: falta el perfil Oculus Touch Controller (paso «Activa OpenXR»). Agrégalo y vuelve a compilar.",
-  "Ves los controles del simulador y la cámara queda pegada, sin moverse con tu cabeza: es el XR Device Simulator, que solo sirve en el computador. Repite el paso «Quita el XR Device Simulator» (o usa el script del Día 9, que lo quita solo de la build) y vuelve a compilar.",
+  "Ves los controles del simulador y la cámara queda pegada, sin moverse con tu cabeza: es el XR Device Simulator, que solo sirve en el computador. Repite el paso «Quita el XR Device Simulator» y vuelve a compilar.",
   "Va entrecortado: baja los Max Particles de la nieve (por ejemplo a 1000) y compila otra vez.",
   "La app no está en la biblioteca: búscala en Orígenes desconocidos."]];
  var credits=["Créditos del juego","Si compartes tu juego, da crédito a quien hizo los modelos y la música.",[
@@ -1353,8 +1352,7 @@ var HOLD=[
   "En la Hierarchy selecciona XR Device Simulator (el objeto que pusiste en el Día 1 o 3).",
   "Desmarca la casilla junto a su nombre en el Inspector para apagarlo (o bórralo con Supr). Ctrl + S para guardar.",
   "Cuando quieras volver a probar con el teclado en el computador, vuelve a marcar la casilla.",
-  "Tu cabeza y tus controles del Quest reemplazan al simulador: el XR Origin ya los sigue."],
-  "El script del Día 9 (Day09BuildHelper.cs) no toca tu escena: quita el simulador solo de la copia que va dentro del APK, así no tienes que apagarlo ni encenderlo."];
+  "Tu cabeza y tus controles del Quest reemplazan al simulador: el XR Origin ya los sigue."]];
  addBefore(9,"Compila e instala",[quitSim,preBuild]);
  addBefore(9,"Construye el día con el script",[ifFails,credits]);
 })();
@@ -1922,7 +1920,7 @@ Object.keys(CATCH).forEach(function(k){
   CATCH[k].forEach(function(f){rows.push({t:"Descargar "+f,href:B+"/dia-"+pp+"/scripts/"+f,dl:true,
     note:"Guárdalo en "+(CDEST[f]||("Assets/Day"+pp+"/Editor/"))+" (crea la carpeta si no existe)."})});
   rows.push("Vuelve a Unity y espera a que termine de compilar (barra de progreso abajo a la derecha).");
-  rows.push("Abre el menú "+CMENU[d]+". "+(d===9?"Configura Android para Quest en un clic: la escena Day08_Polish en el build, los ajustes de Android (API 29, IL2CPP, ARM64, Package Name), OpenXR, Meta Quest Support y el perfil Oculus Touch Controller. La plataforma la cambias tú en «Cambia a Android». Antes corre VR Class > Day 08 > Build Polish Scene para que la escena sea la final.":"La escena se arma y se guarda en Assets/Day"+pp+"/."));
+  rows.push("Abre el menú "+CMENU[d]+". "+(d===9?"Configura Android para Quest en un clic: la escena Day08_Polish en el build, los ajustes de Android (API 29, IL2CPP, ARM64, Package Name), OpenXR, Meta Quest Support y el perfil Oculus Touch Controller. Además quita el XR Device Simulator solo de la copia que va dentro del APK (tu escena no cambia). La plataforma la cambias tú en «Cambia a Android». Antes corre VR Class > Day 08 > Build Polish Scene para que la escena sea la final.":"La escena se arma y se guarda en Assets/Day"+pp+"/."));
   if(d===8){rows.push("Para ver el trineo y la máquina: copia santas_sleigh.fbx y machine_industry_2.fbx a Assets/Day08/Models y Maquina.png a Assets/Day08/Models/Textures antes de construir (los tres se descargan aquí abajo y en el paso «El trineo y la máquina de juguetes»). Sin ellos se queda la caja de siempre. El script crea solo el material Maquina.");
    [["santas_sleigh.fbx","Assets/Day08/Models"],["machine_industry_2.fbx","Assets/Day08/Models"],["Maquina.png","Assets/Day08/Models/Textures"]].forEach(function(f){rows.push({t:"Modelo: descargar "+f[0],href:B+"/dia-08/models/"+f[0],dl:true,note:"Guárdalo en "+f[1]+" (crea la carpeta si no existe)."})})}
   if(d>=3&&d<=8)rows.push("Para ver los modelos de Navidad en lugar de cubos, importa antes el pack (Día 3, «Descarga el pack de Navidad»). Si se ven rosados, repasa «Arregla el color rosado» del Día 3.");
